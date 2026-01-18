@@ -32,6 +32,9 @@ function setListenerTocard() {
                     }, 1000);
 
                 } else {
+                    temp.classList.add("hidden");
+                    firstPick.classList.add("hidden");
+                    finish();
                     firstPick = null;
                 }
 
@@ -90,6 +93,8 @@ function handleClick() {
 
     firstPick = null;
 
+    main.classList.remove("endScreen");
+
     generateCardList();
     setListenerTocard();
 }
@@ -104,6 +109,7 @@ function cntDec() {
         cnt.innerHTML = cntNum;
     } else {
         alert("남은 횟수 없음!!!")
+        main.innerHTML = "";
     }
 }
 
@@ -116,5 +122,18 @@ function reset() {
     cnt.innerHTML = '5';
 
     firstPick = null;
+
+}
+
+function finish() {
+    const hidCard = document.querySelectorAll(".card-area:not(.hidden)");
+
+    if (hidCard.length == 0) {
+        setTimeout(function () {
+            main.innerHTML = "The End!!!"
+            main.classList.add("endScreen");
+        }, 300)
+    }
+
 
 }
