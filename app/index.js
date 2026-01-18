@@ -118,7 +118,7 @@ function reset() {
     const cnt = document.querySelector("#cnt");
     const val = document.querySelector("#cardCnt");
 
-    val.value = '2';
+    val.value = '5';
     cnt.innerHTML = '5';
 
     firstPick = null;
