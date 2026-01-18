@@ -12,6 +12,14 @@ function setListenerTocard() {
                 return;
             }
 
+            const currentCnt = Number(document.querySelector("#cnt").innerHTML);
+
+            if (currentCnt <= 0) {
+                alert("남은 횟수 없음!!!")
+                main.innerHTML = "";
+                return;
+            }
+
             temp.classList.toggle("flip");
 
             const myValue = temp.querySelector(".card-back").innerHTML;
@@ -107,9 +115,6 @@ function cntDec() {
     if (cntNum > 0) {
         cntNum = cntNum - 1;
         cnt.innerHTML = cntNum;
-    } else {
-        alert("남은 횟수 없음!!!")
-        main.innerHTML = "";
     }
 }
 
